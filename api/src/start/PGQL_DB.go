@@ -41,5 +41,5 @@ func InitDBconnection() {
 		slog.Error("failed to ping database", "error", err)
 		os.Exit(2)
 	}
-	slog.Info("connected to database")
+	slog.Info("DB and DB connections is enabled and ready.")
 }

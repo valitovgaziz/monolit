@@ -11,7 +11,7 @@ import (
 
 var Done = make(chan bool)
 
-func StartServerAndRouting() {
+func InitRouting() {
 	slog.Info("Init routing")
 	r := chi.NewRouter()
 
@@ -36,16 +36,16 @@ func StartServerAndRouting() {
 		w.Write([]byte("Hi"))
 		w.WriteHeader(http.StatusOK)
 	})
+}
 
-	// up server on 3000 port on gorutin
+// up server on 3000 port on gorutin
+func StartServer() {
 	go func() {
 		defer close(Done)
-		slog.Info("Adadfsa")
 		err := http.ListenAndServe(":3000", r)
 		if err != nil {
 			slog.Error("Can't start server: ", "error", err)
 		}
 
 	}()
-
 }
