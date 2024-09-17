@@ -1,8 +1,8 @@
 package main
 
 import (
+	"api/src/start"
 	"log/slog"
-	"mon/src/start"
 	"os"
 
 	"github.com/profclems/go-dotenv"

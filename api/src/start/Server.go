@@ -1,6 +1,7 @@
 package start
 
 import (
+	"api/src/handlers/auth"
 	"log/slog"
 	"net/http"
 	"time"
@@ -10,10 +11,10 @@ import (
 )
 
 var Done = make(chan bool)
+var r = chi.NewRouter()
 
 func InitRouting() {
 	slog.Info("Init routing")
-	r := chi.NewRouter()
 
 	// middlewares
 	r.Use(middleware.Logger)
@@ -32,10 +33,17 @@ func InitRouting() {
 		w.Write([]byte("method is not valid"))
 	})
 
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hi"))
-		w.WriteHeader(http.StatusOK)
+	// public Routes
+	r.Group(func(r chi.Router) {
+		r.Post("/signup", auth.Register) // register
+		r.Post("/signin", auth.Login)    // signin
+		// r.Get("/search", srch.Search)
+		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+			w.Write([]byte("Hi"))
+			w.WriteHeader(http.StatusOK)
+		})
 	})
+
 }
 
 // up server on 3000 port on gorutin
