@@ -1,4 +1,4 @@
-package auth
+package register
 
 import (
 	"api/src/models"

@@ -1,6 +1,7 @@
 package start
 
 import (
+	"api/src/handlers/register"
 	"api/src/handlers/auth"
 	"net/http"
 
@@ -11,7 +12,8 @@ func Routing() {
 
 	// public Routes
 	r.Group(func(r chi.Router) {
-		r.Post("/signup", auth.Register) // register
+		r.Post("/signup", register.Register) // register
+		r.Post("/signupShort", register.FastRegister) // fast register
 		r.Post("/signin", auth.Login)    // signin
 		// r.Get("/search", srch.Search)
 		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
