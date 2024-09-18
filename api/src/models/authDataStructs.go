@@ -18,3 +18,9 @@ type Claims struct {
 	Phone string `json:"phone"`
 	Role  string `json:"role"`
 }
+
+type ShortCredentials struct {
+	Phone    string `json:"phone"`
+	Password string `json:"password"`
+	Role     string `json:"role"`
+}
