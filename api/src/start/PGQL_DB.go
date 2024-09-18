@@ -12,8 +12,7 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-
-func InitDBconnection() {
+func DBconnection() {
 	slog.Info("Init DB connection")
 	dsn := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Yekaterinburg",

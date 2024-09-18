@@ -18,8 +18,9 @@ func init() {
 }
 
 func main() {
-	start.InitRouting()
-	start.StartServer()
-	start.InitDBconnection()
+	start.Middleware()
+	start.Routing()
+	start.Server()
+	start.DBconnection()
 	slog.Info("server is closed", "info", <-start.Done)
 }
