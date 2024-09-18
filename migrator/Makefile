@@ -9,7 +9,7 @@ v:
 status:
 	@goose -dir ${GOOSE_MIGRATION_DIR} ${GOOSE_DRIVER} ${GOOSE_DBSTRING} status
 
-migration: run
+migration:
 	goose -dir ${GOOSE_MIGRATION_DIR} ${GOOSE_DRIVER} ${GOOSE_DBSTRING} up
 
 .DEFAULT_GOAL=migration
