@@ -3,12 +3,6 @@ GOOSE_DBPASSWOR=postgres
 GOOSE_DBSTRING="postgresql://postgres:postgres@localhost:5432/postgres?sslmode=disable"
 GOOSE_MIGRATION_DIR=migrations
 
-build:
-	@go build -o SetEnvVar/set SetEnvVar/main.go
-
-run: build
-	@./SetEnvVar/set
-
 v:
 	@goose -version
 
