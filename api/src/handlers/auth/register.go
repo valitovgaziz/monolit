@@ -2,7 +2,7 @@ package auth
 
 import (
 	"api/src/models"
-	"api/src/start"
+	"api/src/storage"
 	"encoding/json"
 	"net/http"
 
@@ -36,7 +36,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		Phone:    Credentials.Phone,
 		Role:     Credentials.Role,
 	}
-	result := start.PSQL_GORM_DB.Create(&user)
+	result := storage.PSQL_GORM_DB.Create(&user)
 	if result.Error != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return

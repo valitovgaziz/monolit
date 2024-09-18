@@ -1,6 +1,7 @@
 package start
 
 import (
+	"api/src/storage"
 	"fmt"
 	"log/slog"
 	"os"
@@ -11,7 +12,6 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-var PSQL_GORM_DB *gorm.DB
 
 func InitDBconnection() {
 	slog.Info("Init DB connection")
@@ -30,7 +30,7 @@ func InitDBconnection() {
 		slog.Error("failed to connect database", "error", err)
 		os.Exit(2)
 	}
-	PSQL_GORM_DB = db
+	storage.PSQL_GORM_DB = db
 	sql, err := db.DB()
 	if err != nil {
 		slog.Error("failed to get database", "error", err)
