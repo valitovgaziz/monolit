@@ -1,7 +1,8 @@
 package main
 
 import (
-	"api/src/start"
+	"api/src/server"
+	"api/src/storage"
 	"log/slog"
 	"os"
 
@@ -18,9 +19,10 @@ func init() {
 }
 
 func main() {
-	start.Middleware()
-	start.Routing()
-	start.Server()
-	start.DBconnection()
-	slog.Info("server is closed", "info", <-start.Done)
+	server.Middleware()
+	server.Routing()
+	server.Start()
+	storage.DBconnection()
+	slog.Info("Server is started seccesfully", "SERVER_PORT", dotenv.GetString("SERVER_PORT"))
+	slog.Info("server is closed", "info", <-server.Done)
 }
