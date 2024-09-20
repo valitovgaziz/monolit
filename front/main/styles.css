@@ -1,28 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fafafa;
     color: #444;
+    margin: 1vh 5vh 1vh 5vh;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+header {
+    display: flex; /* Размещаем элементы в строку */
+    justify-content: space-between; /* Распределяем элементы с пробелами между ними */
+    align-items: center; /* Выравниваем их по центру по вертикали */
+    background-color: #fff;
+    height: 60px;
 }
 
-header nav li {
-    display: inline-block;
-    padding: 0 10px;
+.logo {
+    font-size: 2em;
+    color: blue;
 }
 
-header nav a {
-    text-decoration: none;
-    color: #444;
-    font-size: 16px;
+#mainMenu ul {
+    list-style: none; /* Убираем маркеры списка */
+    position: relative; /* Позволяет позиционировать дочерние элементы относительно родителя */
 }
 
-header nav a:hover {
-    text-decoration: underline;
+#mainMenu li {
+    float: left; /* Располагаем элементы списка рядом друг с другом */
+    width: 150px; /* Ширина элемента */
+    line-height: 60px; /* Высота линии текста */
+    text-align: center; /* Центруем текст внутри элемента */
+    cursor: pointer; /* Добавляем курсор мыши при наведении */
+    transition: all .3s ease; /* Плавный переход к стилям hover */
+}
+
+#mainMenu a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: black;
+}
+
+#mainMenu ul ul {
+    display: none; /* Скрываем подменю по умолчанию */
+    position: absolute; /* Абсолютное позиционирование позволяет выводить подменю вне основного потока страницы */
+    z-index: 999; /* Обеспечивает правильное отображение поверх других элементов */
+    min-width: 150px; /* Минимальная ширина подменю */
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+#mainMenu ul li:hover > ul {
+    display: block; /* Показываем подменю при наведении */
+}
+
+#mainMenu ul ul li {
+    width: 100%; /* Ширина подэлемента равна ширине родительского элемента */
+    line-height: 30px; /* Высота строки текста подэлемента */
+    float: none; /* Элементы подменю располагаются вертикально */
 }
 
 main section h1 {

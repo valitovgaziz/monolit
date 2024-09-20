@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = formData.get('password');
 
         try {
-            await fetch('/api/register', {
+            await fetch('http://localhost:8000/signupShort', {
                 method: 'POST',
                 body: JSON.stringify({ phoneNumber, role, password }),
                 headers: {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             });
             
-            window.location.href = '/login';
+            window.location.href = '../auth/auth.html';
         } catch (error) {
             console.log('Ошибка при отправке данных: ', error);
         }
