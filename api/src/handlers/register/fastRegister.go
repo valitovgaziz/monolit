@@ -29,7 +29,6 @@ func FastRegister(w http.ResponseWriter, r *http.Request) {
 	account := models.Account{
 		Id:       id,
 		Login:    ShortCredentials.Phone,
-		Email:    "",
 		Password: hashedPassword,
 		Phone:    ShortCredentials.Phone,
 		Role:     ShortCredentials.Role,
