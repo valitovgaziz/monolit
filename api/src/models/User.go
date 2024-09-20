@@ -2,7 +2,7 @@ package models
 
 import "github.com/google/uuid"
 
-type User struct {
+type Account struct {
 	Id       uuid.UUID `json:"id" gorm:"type:uuid;primaryKey;unique;AutoIncrement:false"`
 	Login    string    `json:"login" gorm:"type:string"`
 	Email    string    `json:"email" gorm:"type:string;index"`

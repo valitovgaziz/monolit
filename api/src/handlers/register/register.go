@@ -17,7 +17,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		return
-	}
+	}	
 
 	// hash password
 	hashedPassword, err := hashPassword(Credentials.Password)
@@ -28,7 +28,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 
 	id := uuid.New()
 
-	user := models.User{
+	user := models.Account{
 		Id:       id,
 		Login:    Credentials.Login,
 		Email:    Credentials.Email,

@@ -26,7 +26,7 @@ func FastRegister(w http.ResponseWriter, r *http.Request) {
 	}
 	id := uuid.New()
 
-	user := models.User{
+	account := models.Account{
 		Id:       id,
 		Login:    ShortCredentials.Phone,
 		Email:    "",
@@ -34,7 +34,7 @@ func FastRegister(w http.ResponseWriter, r *http.Request) {
 		Phone:    ShortCredentials.Phone,
 		Role:     ShortCredentials.Role,
 	}
-	result := storage.PSQL_GORM_DB.Create(&user)
+	result := storage.PSQL_GORM_DB.Create(&account)
 	if result.Error != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
