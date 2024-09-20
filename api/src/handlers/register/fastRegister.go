@@ -4,20 +4,25 @@ import (
 	"api/src/models"
 	"api/src/storage"
 	"encoding/json"
+	"log/slog"
 	"net/http"
 
 	"github.com/google/uuid"
 )
 
 func FastRegister(w http.ResponseWriter, r *http.Request) {
+	slog.Info("FastRegister")
 	var ShortCredentials models.ShortCredentials
 
+	slog.Info("nil val shood by ShortCredentials = %v", ShortCredentials)
 	// Decode body
 	err := json.NewDecoder(r.Body).Decode(&ShortCredentials)
 	if err != nil {
+		slog.Info("Not decoded")
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	slog.Info("Decode ShortCredentials = %v", ShortCredentials)
 
 	hashedPassword, err := hashPassword(ShortCredentials.Password)
 	if err != nil {
