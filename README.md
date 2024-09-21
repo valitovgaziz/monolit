@@ -3,4 +3,4 @@
 
 last: cors set
 
-need: 
+need: настроить логгер для chi, DB, handlers. Write to file and terminal.

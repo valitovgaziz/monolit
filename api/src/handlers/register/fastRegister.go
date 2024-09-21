@@ -36,12 +36,13 @@ func FastRegister(w http.ResponseWriter, r *http.Request) {
 		Phone:    ShortCredentials.Phone,
 		Role:     ShortCredentials.Role,
 	}
+	slog.Info("account will save")
 	result := storage.PSQL_GORM_DB.Create(&account)
 	if result.Error != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-
+	slog.Info("Account saved")
 	w.WriteHeader(http.StatusOK)
 
 }

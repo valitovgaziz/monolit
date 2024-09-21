@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 body: JSON.stringify({ phoneNumber, role, password }),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*', // Разрешить любой домен
+                    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', // Разрешенные методы
+                    'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization' // Разрешенные заголовки
                 },
             });
             
