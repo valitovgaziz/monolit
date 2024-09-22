@@ -1,6 +1,7 @@
 package main
 
 import (
+	"api/src/logger"
 	"api/src/server"
 	"api/src/storage"
 	"log/slog"
@@ -19,6 +20,7 @@ func init() {
 }
 
 func main() {
+	logger.InitLogger()
 	server.Middleware()
 	server.Routing()
 	server.Start()
