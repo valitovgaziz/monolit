@@ -7,4 +7,7 @@ run: build
 test:
 	@go test ./... -v
 
+cleanlog:
+	@remove-item ./logs/*
+
 .DEFAULT_GOAL=run

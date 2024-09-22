@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"log/slog"
 	"os"
+	"regexp"
 	"time"
 
 	"github.com/lmittmann/tint"
@@ -12,19 +13,22 @@ import (
 
 func InitLogger() (close func(), err error) {
 	slog.Info("Start initing logger")
-	name := time.Now().Format("2006-01-02_15:04:05.000")
+
+	name := time.Now().UTC().Format("2006-01-02_15:04:05.000")
+    pattern := regexp.MustCompile(`[:]`)
+    output := pattern.ReplaceAllLiteralString(name, "-")
 
 	err = os.MkdirAll("logs", fs.ModePerm)
 	if err != nil {
 		slog.Error("Directory already is exiists.")
 		return nil, err
 	}
-
-	filename := "\\" + name
+	filename := "./logs/" + output + ".log"
+	slog.Info("filename = " + filename)
 
 	file, err := os.Create(filename)
 	if err != nil {
-		slog.Error("Can't create file "+filename, "error", err)
+		slog.Error("File not created", "error", err)
 		return nil, err
 	}
 	slog.Info(file.Name())
