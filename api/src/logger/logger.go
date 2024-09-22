@@ -11,26 +11,29 @@ import (
 )
 
 func InitLogger() (close func(), err error) {
-	slog.Info("Init logger")
+	slog.Info("Start initing logger")
 	name := time.Now().Format("2006-01-02_15:04:05.000")
 
 	err = os.MkdirAll("logs", fs.ModePerm)
 	if err != nil {
 		slog.Error("Directory already is exiists.")
+		return nil, err
 	}
 
-	filename := "./logs/" + name
+	filename := "\\" + name
 
-	file, err := os.Create("/logs/" + filename)
+	file, err := os.Create(filename)
 	if err != nil {
-		slog.Error("Can't create file " + filename, "error", err)
+		slog.Error("Can't create file "+filename, "error", err)
+		return nil, err
 	}
-	slog.Info(name)
+	slog.Info(file.Name())
 
 	close = func() {
 		errC := file.Close()
 		if errC != nil {
 			slog.Info("logger", "close", errC)
+			panic("error can't close log file")
 		}
 	}
 
@@ -38,7 +41,7 @@ func InitLogger() (close func(), err error) {
 
 	h := tint.NewHandler(w, &tint.Options{
 		AddSource:   false,
-		Level:       nil,
+		Level:       slog.LevelDebug,
 		ReplaceAttr: nil,
 		TimeFormat:  time.StampMilli,
 		NoColor:     false,

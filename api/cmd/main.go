@@ -20,7 +20,11 @@ func init() {
 }
 
 func main() {
-	logger.InitLogger()
+	close, err := logger.InitLogger()
+	if err != nil {
+		panic("can't init logger error = " + err.Error())
+	}
+	close()
 	server.Middleware()
 	server.Routing()
 	server.Start()
