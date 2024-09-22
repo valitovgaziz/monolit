@@ -24,7 +24,7 @@ func main() {
 	if err != nil {
 		panic("can't init logger error = " + err.Error())
 	}
-	close()
+	defer close()
 	server.Middleware()
 	server.Routing()
 	server.Start()
