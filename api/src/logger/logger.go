@@ -8,7 +8,6 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/lmittmann/tint"
 	"github.com/profclems/go-dotenv"
 )
 
@@ -42,15 +41,13 @@ func InitLogger() (close func(), err error) {
 
 	level := LogLevel(dotenv.GetString("LOG_LEVEL"))
 
-	h := tint.NewHandler(W, &tint.Options{
-		AddSource:   false,
+	JS := slog.NewJSONHandler(W, &slog.HandlerOptions{
+		AddSource:   true,
 		Level:       level,
 		ReplaceAttr: nil,
-		TimeFormat:  time.StampMilli,
-		NoColor:     false,
 	})
 
-	l := slog.New(h)
+	l := slog.New(JS)
 	slog.SetDefault(l)
 
 	slog.Info("Logger inited with LogLevel=" + level.String())
