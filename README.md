@@ -1,4 +1,5 @@
 # RESTfull API on Golang
 # Migration on presly goose
+# Frontend on HTML, CSS, JavaScript
 
-TODO: Прописать более внятные инфо логи.
+TODO: Write frontend
