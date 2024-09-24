@@ -15,9 +15,10 @@
   
   <style scoped>
   .footer {
+    display: flex;
     text-align: center;
     padding: 1rem;
-    background-color: #eee;
+    background-color: #f5c73d;
     border-top: 1px solid #ccc;
   }
   </style>

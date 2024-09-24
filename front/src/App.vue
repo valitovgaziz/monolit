@@ -1,19 +1,20 @@
 <script setup>
-import Footer from './components/Footer.vue'
-import SearchBar from './components/Footer.vue'
-import Header from './components/Footer.vue'
+import FooterInfo from './components/Footer.vue'
+import SearchBar from './components/SearchBar.vue'
+import HeaderMenu from './components/Header.vue'
 </script>
 
 <template>
   <header>
-    <Header />
+    <HeaderMenu />
   </header>
 
   <main>
     <SearchBar />
   </main>
+
   <footer>
-    <Footer />
+    <FooterInfo />
   </footer>
 </template>
 

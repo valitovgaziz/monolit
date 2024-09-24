@@ -1,0 +1,17 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(207, 225, 246);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(184, 244, 211);
+
+    height: 100vh;
+
+    display: box;
+    flex-direction: column;
+    justify-content: space-between;
+}

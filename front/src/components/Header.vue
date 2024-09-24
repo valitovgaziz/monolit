@@ -1,7 +1,7 @@
 <template>
     <header class="header">
       <!-- Логотип -->
-      <img src="logo.png" alt="Logo" />
+      <img id="logo" src="/src/assets/goose_logo.png" alt="Logo" />
       
       <!-- Выпадающее меню справа -->
       <nav class="menu-right">
@@ -21,17 +21,18 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: Arial, sans-serif;
-}
-
 .header {
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #b1b1fd;
   border-bottom: 1px solid #ccc;
+}
+
+#logo {
+    width: 25px;
 }
 
 .menu-right {
