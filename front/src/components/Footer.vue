@@ -3,7 +3,7 @@
       <p>© 2023 Company Name Inc. All rights reserved.</p>
       <p>Company Address: 123 Main Street, City, State ZIP</p>
       <p>Phone Number: +1 (XXX) XXX-XXXX</p>
-      <p>Email: <EMAIL></p>
+      <p>Email: valitovgaziz@yandex.ru</p>
     </footer>
   </template>
   
