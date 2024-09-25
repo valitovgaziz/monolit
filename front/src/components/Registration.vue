@@ -34,7 +34,7 @@
           return;
         }
   
-        const url = '/api/register';
+        const url = '/Signin';
   
         try {
           await axios.post(url, {
