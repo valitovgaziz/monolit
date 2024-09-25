@@ -5,6 +5,7 @@ import HeaderMenu from './components/Header.vue'
 </script>
 
 <template>
+
   <header>
     <HeaderMenu />
   </header>
@@ -16,6 +17,7 @@ import HeaderMenu from './components/Header.vue'
   <footer>
     <FooterInfo />
   </footer>
+  
 </template>
 
 <style scoped>
