@@ -30,7 +30,7 @@
           return;
         }
   
-        const url = 'http://localhost:8000/fastsignup';
+        const url = 'http://localhost:8000/SingUp';
   
         try {
           axios.post(url, {
