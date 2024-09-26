@@ -12,15 +12,20 @@ type Credentials struct {
 	Role     string `json:"role"`
 }
 
+type ShortCredentials struct {
+	Phone    string `json:"phone"`
+	Password string `json:"password"`
+	Role     string `json:"role"`
+}
+
+type Phone struct {
+	Phone    string `json:"phone"`
+	Password string `json:"password"`
+}
+
 type Claims struct {
 	jwt.RegisteredClaims
 	Email string `json:"email"`
 	Phone string `json:"phone"`
 	Role  string `json:"role"`
-}
-
-type ShortCredentials struct {
-	Phone    string `json:"phone"`
-	Password string `json:"password"`
-	Role     string `json:"role"`
 }
