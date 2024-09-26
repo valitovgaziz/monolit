@@ -1,10 +1,7 @@
 <template>
     <div id="app">
-      <form @submit.prevent="registerUser">
-        <label for="login">Логин:</label>
-        <input type="text" id="login" v-model="login">
-        <br>
-        <label for="phone">Номер телефона:</label>
+      <form @submit.prevent="onSubmit">
+        <label for="phone">Телефон:</label>
         <input type="tel" id="phone" v-model="phone">
         <br>
         <label for="password">Пароль:</label>
@@ -19,32 +16,31 @@
   import axios from 'axios';
   
   export default {
-    name: 'RegisterForm',
+    name: 'FastSignUp',
     data() {
       return {
-        login: '',
         phone: '',
         password: ''
       };
     },
     methods: {
-      registerUser() {
-        if (!this.login || !this.phone || !this.password) {
+      onSubmit() {
+        if (!this.phone || !this.password) {
           alert('Все поля должны быть заполнены');
           return;
         }
   
-        const url = '/Signin';
+        const url = 'http://localhost:8000/fastsignup';
   
         try {
-          await axios.post(url, {
-            login: this.login,
+          axios.post(url, {
             phone: this.phone,
             password: this.password
+          }).then(() => {
+            window.location.href = 'http://localhost:8000/';
           });
-          window.location.href = '/';
-        } catch (err) {
-          alert(`Ошибка при регистрации: ${err}`);
+        } catch (error) {
+          alert(`Ошибка при регистрации: ${error}`);
         }
       }
     }
