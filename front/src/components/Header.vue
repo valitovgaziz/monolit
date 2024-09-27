@@ -6,9 +6,9 @@
       <!-- Выпадающее меню справа -->
       <nav class="menu-right">
         <ul>
-          <li><router-link to="http://localhost:8000/Signin">Login</router-link></li>
-          <li><router-link href="http://localhost:8000/Signin">Sign Up</router-link></li>
-          <li><router-link href="#">About Us</router-link></li>
+          <li><router-link to="SigIn">Login</router-link></li>
+          <li><router-link to="SignUp">Sign Up</router-link></li>
+          <li><router-link to="About">About Us</router-link></li>
         </ul>
       </nav>
     </header>

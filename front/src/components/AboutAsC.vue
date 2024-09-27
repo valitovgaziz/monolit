@@ -13,9 +13,9 @@
         <article class="card">
           <h2>Фотографии</h2>
           <div class="gallery">
-            <img src="images/photo1.jpg" alt="Photo 1">
-            <img src="images/photo2.jpg" alt="Photo 2">
-            <img src="images/photo3.jpg" alt="Photo 3">
+            <img src="../images/goose_logo.png" alt="Photo 1">
+            <img src="../images/photo_2024-06-29_09-10-28.jpg" alt="Photo 2">
+            <img src="../images/photo_2024-06-30_09-14-32.jpg" alt="Photo 3">
           </div>
         </article>
   
