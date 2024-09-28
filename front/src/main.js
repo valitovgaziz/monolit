@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import SigninPage from './Pages/SignIn.vue'
+import SigninPage from './components/Pages/SignIn.vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
-import SignUp from './Pages/SignUp.vue'
-import SignIn from './Pages/SignIn.vue'
-import About from './Pages/About.vue'
+import SignUp from './components/Pages/SignUp.vue'
+import SignIn from './components/Pages/SignIn.vue'
+import About from './components/Pages/About.vue'
 
 const routes = [
     { path: '/',

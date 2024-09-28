@@ -1,8 +1,7 @@
 <script setup>
-    import FooterInfo from '../components/Footer.vue'
-// import FooterInfo from '../components/Footer.vue'
-// import Singin from '../components/SingInC.vue'
-// import HeaderMenu from '../components/Header.vue'
+ import FooterInfo from '../Footer.vue'
+ import SignIn from '../SignInC.vue'
+ import HeaderMenu from '../Header.vue'
 </script>
 
 <template>
