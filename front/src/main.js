@@ -7,10 +7,18 @@ import SignIn from './Pages/SignIn.vue'
 import About from './Pages/About.vue'
 
 const routes = [
-    { path: '/', component: App },
-    { path: '/Signin', component: SignIn },
-    { path: '/SignUp', component: SignUp },
-    { path: '/about', component: About }
+    { path: '/',
+      name: 'home',
+      component: App },
+    { path: '/SingIn',
+      name: 'SingIn',
+      component: SignIn },
+    { path: '/SignUp',
+      name: 'SingUp',
+      component: SignUp },
+    { path: '/About',
+      name: 'About',
+      component: About },
   ]
 
 const router = createRouter({

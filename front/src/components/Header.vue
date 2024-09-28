@@ -6,9 +6,11 @@
       <!-- Выпадающее меню справа -->
       <nav class="menu-right">
         <ul>
-          <li><router-link to="SigIn">Login</router-link></li>
+          <li><router-link to="SigIn">Sign In</router-link></li>
           <li><router-link to="SignUp">Sign Up</router-link></li>
           <li><router-link to="About">About Us</router-link></li>
+          <li><a href="About">About aaa</a></li>
+          <li><a href="SignUp">SingUp aaa</a></li>
         </ul>
       </nav>
     </header>

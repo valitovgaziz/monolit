@@ -2,6 +2,7 @@
     import About from '../components/AboutAsC.vue'
     import FooterInfo from '../components/Footer.vue'
     import HeaderMenu from '../components/Header.vue'
+
 </script>
 
 <template>
