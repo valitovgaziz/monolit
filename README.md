@@ -3,4 +3,4 @@
 # Frontend on HTML, CSS, JavaScript
 
 TODO:
-1. Authentication service
+1. Authentication service "AUTH" build
